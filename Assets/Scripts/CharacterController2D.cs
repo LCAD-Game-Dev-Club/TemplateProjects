@@ -17,6 +17,7 @@ public class CharacterController2D : MonoBehaviour
 
     // A bool is a true/false statement
     public bool isGrounded;
+    public bool controlEnabled = true;
 
     // A float is a number slot that can allow decimal values
     public float speed;
@@ -33,7 +34,14 @@ public class CharacterController2D : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {
+    {           
+        // If Control Enabled is false...
+        if (!controlEnabled)
+        {
+            // ... don't run anything past this line in Update
+            return;
+        }
+
         // This makes a new float, then sets the value of that float to the value of the current Horizontal input (Left/Right OR A/D)
         // These inputs are tracked as a scale from -1 to 1, where -1 is fully pressing a left input and 1 is fully pressing a right input
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -47,18 +55,20 @@ public class CharacterController2D : MonoBehaviour
         // If the player is inputting any kind of Horizontal motion...
         if (horizontalInput != 0)
         {
-            // Set the bool for flipping the character sprite on the X axis to true if moving left, set to false if moving right
+            // ... Set the bool for flipping the character sprite on the X axis to true if moving left, set to false if moving right
             mySpriteRenderer.flipX = (horizontalInput < 0);
         }
         
         // If the player presses the Jump button and the character is on the ground...
         if (Input.GetAxis("Jump") > 0 && isGrounded)
         {
-            // Play the animation for launching into the air...
+            // ... Play the animation for launching into the air...
             myAnimator.Play("Launch");
-            // And launch the character into the air
+            // ... And launch the character into the air
             myRigidbody.velocity = new Vector2(0, jumpForce);
         }   
+
+
     }
 
     // Fixed update is called at a fixed interval, regardless of game frame rate
@@ -89,5 +99,12 @@ public class CharacterController2D : MonoBehaviour
 
         // Set the "OnGround" bool in the Animator to match the value of the "isGrounded" bool we just set above
         myAnimator.SetBool("OnGround", isGrounded);
+    }
+
+    public void OnGameOver()
+    {
+        controlEnabled = false;
+        myAnimator.SetFloat("CurrentSpeed", 0);
+        myRigidbody.velocity = new Vector2 (0, myRigidbody.velocity.y);
     }
 }
