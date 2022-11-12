@@ -101,10 +101,14 @@ public class CharacterController2D : MonoBehaviour
         myAnimator.SetBool("OnGround", isGrounded);
     }
 
+    // This function is called in the Game Manager when the game is over
     public void OnGameOver()
     {
+        // Set Control Enabled to false...
         controlEnabled = false;
+        // Set the Current Speed in the Animator to 0...
         myAnimator.SetFloat("CurrentSpeed", 0);
+        // and Set the Player's Horizontal Velocity to 0
         myRigidbody.velocity = new Vector2 (0, myRigidbody.velocity.y);
     }
 }

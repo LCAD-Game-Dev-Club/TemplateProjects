@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     // These are references to the UI Objects that we need to update
     public TextMeshProUGUI collectableCountText;
-    public TextMeshProUGUI youWinText;
+    public GameObject youWinUI;
 
     // This is the integer for how many collectables you have picked up
     public int collectableCount = 0;
@@ -40,6 +40,6 @@ public class GameManager : MonoBehaviour
         // This runs the OnGameOver() function in the Character Controller Script...
         characterControllerScript.OnGameOver();
         // ... Then enables the Win Text
-        youWinText.enabled = true;
+        youWinUI.SetActive(true);
     }
 }
