@@ -9078,6 +9078,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 519420031, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 519420031, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+      propertyPath: orthographic size
+      value: 8.796875
+      objectReference: {fileID: 0}
+    - target: {fileID: 519420031, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519420031, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 519420031, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7358419562401140034, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9128,6 +9148,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+--- !u!1 &7358419560841000050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 519420028, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+  m_PrefabInstance: {fileID: 7358419560841000049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7358419560841000051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358419560841000050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 500
+  m_RefResolutionY: 280
+  m_UpscaleRT: 1
+  m_PixelSnapping: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1001 &8722375955601147596
 PrefabInstance:
   m_ObjectHideFlags: 0
