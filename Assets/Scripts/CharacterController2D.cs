@@ -18,6 +18,7 @@ public class CharacterController2D : MonoBehaviour
     // A bool is a true/false statement
     public bool isGrounded;
     public bool controlEnabled = true;
+    public bool isSquatting;
 
     // A float is a number slot that can allow decimal values
     public float speed;
@@ -66,7 +67,12 @@ public class CharacterController2D : MonoBehaviour
             myAnimator.Play("Launch");
             // ... And launch the character into the air
             myRigidbody.velocity = new Vector2(0, jumpForce);
-        }   
+        } 
+        if (Input.GetButtonDown("Submit"))
+        {
+            myAnimator.Play("Squat");
+        }
+      
 
 
     }
