@@ -18,7 +18,7 @@ public class EnemyControler : MonoBehaviour
 
     // A bool is a true/false statement
     public bool isGrounded;
-    public bool controlEnabled = true;
+    public bool isDead = false;
 
     // A float is a number slot that can allow decimal values
     public float speed;
@@ -34,6 +34,10 @@ public class EnemyControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isDead)
+        {
+            return;
+        }
         myAnimator.SetFloat("CurrentSpeed", Mathf.Abs(myRigidbody.velocity.x));
         myAnimator.SetFloat("VerticalVelocity", myRigidbody.velocity.y);
         mySpriteRenderer.flipX = !movingRight;
@@ -74,7 +78,7 @@ public class EnemyControler : MonoBehaviour
 
     public void OnHit()
     {
-        if (hp == 0)
+        if (isDead)
         {
             return;
         }
@@ -89,28 +93,42 @@ public class EnemyControler : MonoBehaviour
     
     public void OnDeath()
     {
+        isDead = true;
         Debug.Log("Death");
+        
+        // Set the Current Speed in the Animator to 0...
+        myAnimator.SetFloat("CurrentSpeed", 0);
+        // and Set the Player's Horizontal Velocity to 0
+        myRigidbody.velocity = new Vector2(0, myRigidbody.velocity.y);
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        foreach (ContactPoint2D contact in collision.contacts)
+        if (isDead)
         {
-            Vector2 surfaceNormal = contact.normal;
+            //myRigidbody.velocity = new Vector2(0, myRigidbody.velocity.y);
+            return;
+        }
+        else
+        {
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                Vector2 surfaceNormal = contact.normal;
 
-            if (movingRight && surfaceNormal.x < -0.9f)
-            {
-                movingRight = false;
-                return;
-            }
-            else if (!movingRight && surfaceNormal.x > 0.9f)
-            {
-                movingRight = true;
-                return;
+                if (movingRight && surfaceNormal.x < -0.9f)
+                {
+                    movingRight = false;
+                    return;
+                }
+                else if (!movingRight && surfaceNormal.x > 0.9f)
+                {
+                    movingRight = true;
+                    return;
+
+                }
             }
         }
-
     }
-
 
 }
