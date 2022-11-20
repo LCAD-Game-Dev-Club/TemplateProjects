@@ -19,6 +19,7 @@ public class CharacterController2D : MonoBehaviour
     public bool isGrounded;
     public bool controlEnabled = true;
     public bool isSquatting;
+    public bool isCrying;
 
     // A float is a number slot that can allow decimal values
     public float speed;
@@ -68,9 +69,15 @@ public class CharacterController2D : MonoBehaviour
             // ... And launch the character into the air
             myRigidbody.velocity = new Vector2(0, jumpForce);
         } 
+            // ... funny pose
         if (Input.GetButtonDown("Submit"))
         {
             myAnimator.Play("Squat");
+        }
+            // crying
+        if (Input.GetButtonDown("KeyCode.DownArrow"))
+        {
+            myAnimator.Play("Cry");
         }
       
 
