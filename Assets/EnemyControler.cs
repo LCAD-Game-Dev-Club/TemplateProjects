@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyControler : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class EnemyControler : MonoBehaviour
     // A bool is a true/false statement
     public bool isGrounded;
     public bool isDead = false;
+    public UnityEvent onDeathEvent;
 
     // A float is a number slot that can allow decimal values
     public float speed;
@@ -95,6 +97,7 @@ public class EnemyControler : MonoBehaviour
     {
         isDead = true;
         Debug.Log("Death");
+        onDeathEvent.Invoke();
         
         // Set the Current Speed in the Animator to 0...
         myAnimator.SetFloat("CurrentSpeed", 0);
