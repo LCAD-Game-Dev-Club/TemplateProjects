@@ -18,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
     // A bool is a true/false statement
     public bool isGrounded;
     public bool controlEnabled = true;
-    public bool isSquatting;
+    public bool isFind;
     public bool isCrying;
 
     // A float is a number slot that can allow decimal values
@@ -72,7 +72,7 @@ public class CharacterController2D : MonoBehaviour
             // ... funny pose
         if (Input.GetButtonDown("Submit"))
         {
-            myAnimator.Play("Squat");
+            myAnimator.Play("Find");
         }
             // crying
         if (Input.GetAxis("Vertical")<0)
@@ -124,6 +124,7 @@ public class CharacterController2D : MonoBehaviour
         // Set Control Enabled to false...
         controlEnabled = false;
         // Set the Current Speed in the Animator to 0...
+        myAnimator.Play("Find");
         myAnimator.SetFloat("CurrentSpeed", 0);
         // and Set the Player's Horizontal Velocity to 0
         myRigidbody.velocity = new Vector2 (0, myRigidbody.velocity.y);
