@@ -9841,6 +9841,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 7358419562401140062, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7358419562401140063, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
       propertyPath: m_Name
       value: Player
