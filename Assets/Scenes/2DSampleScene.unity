@@ -4825,19 +4825,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7358419562401140036, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
       propertyPath: m_Size.x
-      value: 0.3106141
+      value: 1.6529808
       objectReference: {fileID: 0}
     - target: {fileID: 7358419562401140036, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
       propertyPath: m_Size.y
-      value: 0.91474676
+      value: 3.1710663
       objectReference: {fileID: 0}
     - target: {fileID: 7358419562401140036, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
       propertyPath: m_Offset.x
-      value: 0.009439707
+      value: -0.06196308
       objectReference: {fileID: 0}
     - target: {fileID: 7358419562401140036, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
       propertyPath: m_Offset.y
-      value: 0.9104731
+      value: 2.0386329
       objectReference: {fileID: 0}
     - target: {fileID: 7358419562401140062, guid: 6bc6abe358fe6354d9505a66d7b81fc8, type: 3}
       propertyPath: jumpForce
