@@ -75,9 +75,13 @@ public class CharacterController2D : MonoBehaviour
             myAnimator.Play("Squat");
         }
             // crying
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetAxis("Vertical")<0)
         {
-            myAnimator.Play("Cry");
+            myAnimator.SetBool("IsCrying", true);
+        }
+        else if (Input.GetAxis("Vertical")>=0)
+        {
+            myAnimator.SetBool("IsCrying", false);
         }
       
 
