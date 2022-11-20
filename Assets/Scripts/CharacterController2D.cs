@@ -12,6 +12,9 @@ public class CharacterController2D : MonoBehaviour
     public Animator myAnimator;
     public SpriteRenderer mySpriteRenderer;
 
+    public Bullet bulletPrefab;
+    public Transform shootPoint;
+
     // This will be used to help us tell the editor what counts as ground in our scene
     public LayerMask groundLayer;
 
@@ -34,7 +37,7 @@ public class CharacterController2D : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {           
+    {
         // If Control Enabled is false...
         if (!controlEnabled)
         {
@@ -58,7 +61,7 @@ public class CharacterController2D : MonoBehaviour
             // ... Set the bool for flipping the character sprite on the X axis to true if moving left, set to false if moving right
             mySpriteRenderer.flipX = (horizontalInput < 0);
         }
-        
+
         // If the player presses the Jump button and the character is on the ground...
         if (Input.GetAxis("Jump") > 0 && isGrounded)
         {
@@ -66,7 +69,21 @@ public class CharacterController2D : MonoBehaviour
             myAnimator.Play("Launch");
             // ... And launch the character into the air
             myRigidbody.velocity = new Vector2(0, jumpForce);
-        }   
+        }
+        if (Input.GetButtonDown("Fire1")) 
+        {
+            Debug.Log("shoot");
+            Bullet spawnedBullet = Instantiate(bulletPrefab);
+            Vector3 shootLocalPos = shootPoint.localPosition;
+            if (mySpriteRenderer.flipX)
+            {
+                spawnedBullet.speed *= -1;
+                shootLocalPos.x *= -1;
+            }
+            spawnedBullet.transform.position = this.transform.TransformPoint(shootLocalPos);
+        
+        
+        }
 
 
     }
