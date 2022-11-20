@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     // This bool is whether or not the game has ended
     public bool gameOver = false;
-    
+    public bool isDead = false;
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
             // ... Run the GameOver() function
             GameOver();
         }
-
+        if (isDead)
+        {
+            Death();
+        }
         // This updates the Collectable Count Text to match the Collectable Count Integer
         collectableCountText.text = collectableCount.ToString();
     }
@@ -41,5 +44,9 @@ public class GameManager : MonoBehaviour
         characterControllerScript.OnGameOver();
         // ... Then enables the Win Text
         youWinUI.SetActive(true);
+    }
+    void Death()
+    {
+        characterControllerScript.OnDeath();
     }
 }

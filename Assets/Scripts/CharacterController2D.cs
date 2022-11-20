@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -17,9 +18,10 @@ public class CharacterController2D : MonoBehaviour
 
     // This will be used to help us tell the editor what counts as ground in our scene
     public LayerMask groundLayer;
-
+    public LayerMask DeathPlaneLayer;
     // A bool is a true/false statement
     public bool isGrounded;
+    public bool isDead;  
     public bool controlEnabled = true;
 
     // A float is a number slot that can allow decimal values
@@ -84,7 +86,7 @@ public class CharacterController2D : MonoBehaviour
         
         
         }
-
+        
 
     }
 
@@ -94,6 +96,7 @@ public class CharacterController2D : MonoBehaviour
     {
         // This calls the function that checks to see if the character is on the ground
         GroundCheck();
+        DeathCheck();
     }
 
     // This function casts a ray from the center of the character to just below the character and checks to see if any Game Objects that the ray touches have the "Ground" tag
@@ -117,7 +120,26 @@ public class CharacterController2D : MonoBehaviour
         // Set the "OnGround" bool in the Animator to match the value of the "isGrounded" bool we just set above
         myAnimator.SetBool("OnGround", isGrounded);
     }
+   
+    private void DeathCheck()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, .1f, DeathPlaneLayer);
 
+        // If the ray hits something tagged "Ground", then the character is grounded
+        if (hit.collider != null)
+        {
+            isDead = true;
+            OnDeath();
+        }
+
+        // If the ray does not hit something tagged "Ground", the the character is not grounded
+        else
+        {
+            isDead = false;
+        }
+
+       
+    }
     // This function is called in the Game Manager when the game is over
     public void OnGameOver()
     {
@@ -127,5 +149,11 @@ public class CharacterController2D : MonoBehaviour
         myAnimator.SetFloat("CurrentSpeed", 0);
         // and Set the Player's Horizontal Velocity to 0
         myRigidbody.velocity = new Vector2 (0, myRigidbody.velocity.y);
+    }
+    public void OnDeath()
+    {
+        Debug.Log("death");
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
     }
 }
