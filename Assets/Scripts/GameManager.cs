@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     // This bool is whether or not the game has ended
     public bool gameOver = false;
+
+    public GameObject finalBurger;
+
     
     // Update is called once per frame
     void Update()
@@ -33,6 +36,12 @@ public class GameManager : MonoBehaviour
 
         // This updates the Collectable Count Text to match the Collectable Count Integer
         collectableCountText.text = collectableCount.ToString();
+
+        
+        if(collectableCount == 6)
+        {
+            CollectedAllIngredients();
+        }
     }
 
     void GameOver()
@@ -42,4 +51,9 @@ public class GameManager : MonoBehaviour
         // ... Then enables the Win Text
         youWinUI.SetActive(true);
     }
+
+    public void CollectedAllIngredients()
+    {
+            finalBurger.SetActive(true);
+    } 
 }

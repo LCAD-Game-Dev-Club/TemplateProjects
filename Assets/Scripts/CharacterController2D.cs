@@ -18,6 +18,8 @@ public class CharacterController2D : MonoBehaviour
     // A bool is a true/false statement
     public bool isGrounded;
     public bool controlEnabled = true;
+    public bool isFind;
+    public bool isCrying;
 
     // A float is a number slot that can allow decimal values
     public float speed;
@@ -66,7 +68,22 @@ public class CharacterController2D : MonoBehaviour
             myAnimator.Play("Launch");
             // ... And launch the character into the air
             myRigidbody.velocity = new Vector2(0, jumpForce);
-        }   
+        } 
+            // ... funny pose
+        if (Input.GetButtonDown("Submit"))
+        {
+            myAnimator.Play("Find");
+        }
+            // crying
+        if (Input.GetAxis("Vertical")<0)
+        {
+            myAnimator.SetBool("IsCrying", true);
+        }
+        else if (Input.GetAxis("Vertical")>=0)
+        {
+            myAnimator.SetBool("IsCrying", false);
+        }
+      
 
 
     }
@@ -107,6 +124,7 @@ public class CharacterController2D : MonoBehaviour
         // Set Control Enabled to false...
         controlEnabled = false;
         // Set the Current Speed in the Animator to 0...
+        myAnimator.Play("Find");
         myAnimator.SetFloat("CurrentSpeed", 0);
         // and Set the Player's Horizontal Velocity to 0
         myRigidbody.velocity = new Vector2 (0, myRigidbody.velocity.y);

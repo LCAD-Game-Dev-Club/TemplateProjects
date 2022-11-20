@@ -15,7 +15,7 @@ public class Goal : MonoBehaviour
     void OnTriggerEnter2D()
     {
         // ... Write a Debug message that tells us we've won...
-        Debug.Log("You win!");
+        Debug.Log("yummy burger");
         // ... Play the Audio Clip at the place where the Goal is...
         AudioSource.PlayClipAtPoint(goalSFX, transform.position);
         // ... and set the Game Over Bool in the Game Manager to true
