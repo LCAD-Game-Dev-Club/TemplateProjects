@@ -75,7 +75,7 @@ public class CharacterController2D : MonoBehaviour
             myAnimator.Play("Squat");
         }
             // crying
-        if (Input.GetButtonDown("KeyCode.DownArrow"))
+        if (Input.GetButtonDown("Submit"))
         {
             myAnimator.Play("Cry");
         }
