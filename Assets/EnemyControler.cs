@@ -88,6 +88,7 @@ public class EnemyControler : MonoBehaviour
         Debug.Log("OnHit");
 
         hp -= 1;
+        myAnimator.SetInteger("hp", hp);
         if (hp == 0) 
         {
             OnDeath();
