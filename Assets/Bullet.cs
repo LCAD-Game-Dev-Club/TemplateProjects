@@ -20,6 +20,14 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //GameObject collidedGameObject = collision.gameObject;
+        EnemyControler enemy = collision.gameObject.GetComponent<EnemyControler>();
+        if(enemy != null)
+        {
+            enemy.OnHit();
+        }
+
+
         Destroy(this.gameObject);
     }
 }
