@@ -27538,10 +27538,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpPad
       objectReference: {fileID: 0}
-    - target: {fileID: 5006176040261832724, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
 --- !u!1001 &5698153270989014316
