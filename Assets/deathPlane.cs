@@ -11,7 +11,7 @@ public class deathPlane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deathUI.SetActive(false);
+        //deathUI.SetActive(false);
         deathUIisOn = false;
     }
 

@@ -14,6 +14,10 @@ public class Collectable : MonoBehaviour
     // When the player enters the collider for the Game Object this script is attached to...
     void OnTriggerEnter2D()
     {
+        if (gameManagerScript == null)
+        {
+            gameManagerScript = GameManager.instance;
+        }
         // ... Write a Debug message that tells us what the current Collectable Count is...
         Debug.Log("Picked up! Current count is " + gameManagerScript.collectableCount);
         // ... Add 1 to the current Collectable Count Integer in the Game Manager...

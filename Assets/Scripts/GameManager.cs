@@ -5,6 +5,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance = null;
+
     // A Game Manager is used to keep track of different information about the current state of the game!
 
     // This is a reference to the Character Controller Script on our Player
@@ -20,6 +22,12 @@ public class GameManager : MonoBehaviour
     // This bool is whether or not the game has ended
     public bool gameOver = false;
     public bool isDead = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Update is called once per frame
     void Update()
     {
