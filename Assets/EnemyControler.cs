@@ -41,11 +41,12 @@ public class EnemyControler : MonoBehaviour
         {
             return;
         }
-        myAnimator.SetFloat("CurrentSpeed", Mathf.Abs(myRigidbody.velocity.x));
-        myAnimator.SetFloat("VerticalVelocity", myRigidbody.velocity.y);
+        //myAnimator.SetFloat("VerticalVelocity", myRigidbody.velocity.y);
         mySpriteRenderer.flipX = !movingRight;
 
         myRigidbody.velocity = new Vector2(speed * (movingRight? 1f : -1f), myRigidbody.velocity.y);
+
+        myAnimator.SetFloat("CurrentSpeed", Mathf.Abs(myRigidbody.velocity.x));
     }
 
 
