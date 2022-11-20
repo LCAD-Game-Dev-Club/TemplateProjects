@@ -13,20 +13,24 @@ public class CharacterController2D : MonoBehaviour
     public Animator myAnimator;
     public SpriteRenderer mySpriteRenderer;
 
+
     public Bullet bulletPrefab;
     public Transform shootPoint;
 
     // This will be used to help us tell the editor what counts as ground in our scene
     public LayerMask groundLayer;
     public LayerMask DeathPlaneLayer;
+    public LayerMask BounceLayer;
     // A bool is a true/false statement
     public bool isGrounded;
     public bool isDead;  
     public bool controlEnabled = true;
+    public bool isBounce;
 
     // A float is a number slot that can allow decimal values
     public float speed;
     public float jumpForce;
+    public float bounceForce;
 
     // Start is called before the first frame update
     private void Start()
@@ -97,6 +101,7 @@ public class CharacterController2D : MonoBehaviour
         // This calls the function that checks to see if the character is on the ground
         GroundCheck();
         DeathCheck();
+        BounceCheck();
     }
 
     // This function casts a ray from the center of the character to just below the character and checks to see if any Game Objects that the ray touches have the "Ground" tag
@@ -140,6 +145,30 @@ public class CharacterController2D : MonoBehaviour
 
        
     }
+   
+  
+    private void BounceCheck()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, .1f, BounceLayer);
+
+        // If the ray hits something tagged "Ground", then the character is grounded
+        if (hit.collider != null)
+        {
+            isBounce = true;
+            myRigidbody.velocity = new Vector2(0, bounceForce);
+        }
+
+        // If the ray does not hit something tagged "Ground", the the character is not grounded
+        else
+        {
+            isBounce = false;
+        }
+
+
+
+    }
+    
+    
     // This function is called in the Game Manager when the game is over
     public void OnGameOver()
     {
