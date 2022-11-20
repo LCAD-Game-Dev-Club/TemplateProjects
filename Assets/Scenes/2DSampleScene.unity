@@ -231,6 +231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5006176040261832721, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e18f4b9576ad1d943a59d0e53a3cf39f, type: 3}
     - target: {fileID: 5006176040261832724, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
       propertyPath: m_Name
       value: JumpPad (5)
@@ -293,6 +297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5006176040261832721, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e18f4b9576ad1d943a59d0e53a3cf39f, type: 3}
     - target: {fileID: 5006176040261832724, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
       propertyPath: m_Name
       value: JumpPad (2)
@@ -1493,6 +1501,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5006176040261832721, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e18f4b9576ad1d943a59d0e53a3cf39f, type: 3}
     - target: {fileID: 5006176040261832724, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
       propertyPath: m_Name
       value: JumpPad (6)
@@ -26418,6 +26430,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5006176040261832721, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e18f4b9576ad1d943a59d0e53a3cf39f, type: 3}
     - target: {fileID: 5006176040261832724, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
       propertyPath: m_Name
       value: JumpPad (4)
@@ -26532,6 +26548,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5006176040261832721, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e18f4b9576ad1d943a59d0e53a3cf39f, type: 3}
     - target: {fileID: 5006176040261832724, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
       propertyPath: m_Name
       value: JumpPad (3)
@@ -27396,6 +27416,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5006176040261832721, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e18f4b9576ad1d943a59d0e53a3cf39f, type: 3}
     - target: {fileID: 5006176040261832724, guid: 5b671faf4aef4374c9bd9efc0cfc43e3, type: 3}
       propertyPath: m_Name
       value: JumpPad (1)
